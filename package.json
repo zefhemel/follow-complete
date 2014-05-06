@@ -1,0 +1,7 @@
+{
+    "name": "Follow completer",
+    "uri": "gh:zedapp/followcomplete",
+    "version": "0.1",
+    "description": "Interesting type of code completion",
+    "files": []
+}

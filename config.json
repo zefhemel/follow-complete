@@ -1,0 +1,61 @@
+{
+    databases: {
+        follow: {
+            keyPath: "id",
+            indexes: {
+                pred_idn: {
+                    keyPath: ["mode", "prev", "rank", "follow"]
+                }
+            }
+        }
+    },
+    commands: {
+        "Tools:Follow:Index": {
+            scriptUrl: "./index.js",
+            inputs: {
+                text: true,
+                modeName: true
+            }
+        },
+        "Tools:Follow:Complete": {
+            scriptUrl: "./complete.js",
+            inputs: {
+                text: true,
+                cursorIndex: true,
+                modeName: true
+            }
+        },
+        "Tools:Follow:Trigger Complete": {
+            scriptUrl: "./trigger_complete.js",
+            inputs: {
+                cursor: true
+            }
+        }
+    },
+    modes: {
+        javascript: {
+            handlers: {
+                complete: ["Tools:Follow:Complete"],
+                index: ["Tools:Follow:Index"]
+            }
+        },
+        python: {
+            handlers: {
+                complete: ["Tools:Follow:Complete"],
+                index: ["Tools:Follow:Index"]
+            }
+        },
+        ruby: {
+            handlers: {
+                complete: ["Tools:Follow:Complete"],
+                index: ["Tools:Follow:Index"]
+            }
+        },
+        go: {
+            handlers: {
+                complete: ["Tools:Follow:Complete"],
+                index: ["Tools:Follow:Index"]
+            }
+        }
+    }
+}
