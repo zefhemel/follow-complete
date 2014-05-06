@@ -3,5 +3,9 @@
     "uri": "gh:zedapp/followcomplete",
     "version": "0.1",
     "description": "Interesting type of code completion",
-    "files": []
+    "files": [
+        "complete.js",
+        "index.js",
+        "trigger_complete.js"
+    ]
 }
